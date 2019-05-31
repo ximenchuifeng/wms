@@ -1,7 +1,9 @@
-package com.yyorz.wmswebapi.admin;
+package com.yyorz.wmswebapi.user.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AdminController {
+public class UserController {
+
+
 }
