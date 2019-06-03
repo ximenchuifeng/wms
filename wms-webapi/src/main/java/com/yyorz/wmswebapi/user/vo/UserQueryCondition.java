@@ -1,13 +1,11 @@
 package com.yyorz.wmswebapi.user.vo;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-import lombok.*;
-
-
-@NoArgsConstructor
-@AllArgsConstructor
-public class UserVO {
-
+@ToString
+public class UserQueryCondition {
     @Getter
     @Setter
     private String id;

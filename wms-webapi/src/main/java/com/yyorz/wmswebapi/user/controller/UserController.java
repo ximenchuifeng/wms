@@ -1,6 +1,8 @@
 package com.yyorz.wmswebapi.user.controller;
 
+import com.yyorz.wmswebapi.user.vo.UserQueryCondition;
 import com.yyorz.wmswebapi.user.vo.UserVO;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +14,10 @@ import java.util.List;
 public class UserController {
 
     @RequestMapping(value ="/user", method = RequestMethod.GET)
-    public List<UserVO> query(){
+    public List<UserVO> query(UserQueryCondition condition){
+
+        System.out.println(condition);
+
         List<UserVO> users = new ArrayList<>();
         users.add(new UserVO("1","1","1"));
 

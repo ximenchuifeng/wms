@@ -32,7 +32,11 @@ public class UserControllerTest {
 
     @Test
     public void whenQuerySuccess() throws Exception {
-        mockMvc.perform(get("/user").contentType(MediaType.APPLICATION_JSON_UTF8))
+        mockMvc.perform(get("/user")
+                .param("username", "ximenchuifeng")
+                .param("id","01")
+                .param("password","123456")
+                .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()").value(3));
     }
