@@ -4,6 +4,7 @@ import com.yyorz.wmswebapi.user.vo.UserQueryCondition;
 import com.yyorz.wmswebapi.user.vo.UserVO;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,4 +33,11 @@ public class UserController {
 
     }
 
+
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    public UserVO getInfo(@PathVariable String id){
+        UserVO user = new UserVO();
+        user.setUsername("ximenchuifeng");
+        return user;
+    }
 }
