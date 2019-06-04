@@ -2,7 +2,8 @@ package com.yyorz.wmswebapi.user.controller;
 
 import com.yyorz.wmswebapi.user.vo.UserQueryCondition;
 import com.yyorz.wmswebapi.user.vo.UserVO;
-
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,9 +15,12 @@ import java.util.List;
 public class UserController {
 
     @RequestMapping(value ="/user", method = RequestMethod.GET)
-    public List<UserVO> query(UserQueryCondition condition){
+    public List<UserVO> query(UserQueryCondition condition, @PageableDefault(page = 2, size = 17, sort = "username, asc") Pageable pageable){
 
         System.out.println(condition);
+        System.out.println(pageable.getPageSize());
+        System.out.println(pageable.getPageNumber());
+        System.out.println(pageable.getSort());
 
         List<UserVO> users = new ArrayList<>();
         users.add(new UserVO("1","1","1"));

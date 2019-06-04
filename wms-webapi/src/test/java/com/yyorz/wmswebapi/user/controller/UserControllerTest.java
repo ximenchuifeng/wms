@@ -34,6 +34,9 @@ public class UserControllerTest {
     public void whenQuerySuccess() throws Exception {
         mockMvc.perform(get("/user")
                 .param("username", "ximenchuifeng")
+                .param("page", "1")
+                .param("size", "15")
+                .param("sort", "age,desc")
                 .param("id","01")
                 .param("password","123456")
                 .contentType(MediaType.APPLICATION_JSON_UTF8))

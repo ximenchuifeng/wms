@@ -17,4 +17,5 @@ public class UserQueryCondition {
     @Getter
     @Setter
     private String password;
+
 }

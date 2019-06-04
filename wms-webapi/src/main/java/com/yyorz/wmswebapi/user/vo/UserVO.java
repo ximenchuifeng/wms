@@ -7,7 +7,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserVO {
-
     @Getter
     @Setter
     private String id;
@@ -19,4 +18,5 @@ public class UserVO {
     @Getter
     @Setter
     private String password;
+
 }
