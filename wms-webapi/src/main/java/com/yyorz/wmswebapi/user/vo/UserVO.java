@@ -2,6 +2,7 @@ package com.yyorz.wmswebapi.user.vo;
 
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.yyorz.wmswebapi.user.validator.MyConstraint;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
@@ -28,6 +29,7 @@ public class UserVO {
     @Getter
     @Setter
     @JsonView(Private.class)
+    @MyConstraint(message = "他不是GOD")
     private String username;
 
 

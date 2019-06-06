@@ -87,7 +87,7 @@ public class UserControllerTest {
     public void whenUpdateSuccess() throws Exception {
         Date date = new Date(LocalDateTime.now().plusYears(1).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
         String content = "{" +
-                "\"username\": \"chen\"," +
+                "\"username\": \"GOD\"," +
                 "\"password\":null," +
                 "\"birthday\":" + date.getTime() +
                 "}";
@@ -97,5 +97,11 @@ public class UserControllerTest {
                 .andReturn().getResponse().getContentAsString();
 
         System.out.println(result);
+    }
+
+    @Test
+    public void whenDeleteSuccess() throws Exception {
+        mockMvc.perform(delete("/user/1").contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(status().isOk());
     }
 }

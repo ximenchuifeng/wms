@@ -19,6 +19,11 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
+    @DeleteMapping("/{id:\\d+}")
+    public void delete(@PathVariable String id){
+        System.out.println(id);
+    }
+
     @PostMapping
     @JsonView(UserVO.Public.class)
     public UserVO create(@Valid @RequestBody UserVO user, BindingResult errors) {
